@@ -1,7 +1,17 @@
-function loveCalculator() {
-    var love = Math.random() * 100;
-    love = Math.floor(love);
+/**
+ * Love Calculator in Javascript.
+ * Random number generation & manipulation, 
+ * truncation, conditional return values.
+ * @return {String} containing random number
+ */
 
+const loveCalculator = function() {
+    // generate random num from 0 - 1
+    // increase random range to 1 - 100
+    // truncate decimals (without rounding)
+    var love = Math.floor(Math.random() * 100);
+
+    // Return conditionals
     if(love >= 90) {
         return "Our love level = " + love + "%! MUCHO CALIENTE!";  // 90 - 100
     } else if(love <= 89 && love >= 75) {
@@ -15,6 +25,7 @@ function loveCalculator() {
     } else {
         return "Our love level = " + love + "%! FROZEN TUNDRA!";   // 00 - 10
     }
+};
 
-}
+// test function
 console.log(loveCalculator());
