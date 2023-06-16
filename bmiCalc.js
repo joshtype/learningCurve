@@ -1,12 +1,19 @@
-// BMI calculator
+/**
+ * BMI Calculator in Javascript.
+ * @param  {number} weight in pounds
+ * @param  {number} height in inches
+ * @return {bmi + string}
+ */
 
 const bmi = function(pounds, inchesHigh) {
-    var kg = pounds * .453592;
-    var height = inchesHigh / 12;
-    var mt = height * .3048;
-    var bmi = (kg / mt**2);
+    // convert inches to feet to meters
+    var meters = (inchesHigh / 12) * .3048;
+    // calculate bmi with standard formula
+    var bmi = (pounds * .453592) / (meters * meters);
+    // round up to 2 decimal places 
     bmi = bmi.toFixed(2);
 
+    // Return conditions
     if(bmi >= 30) {
         return "BMI = " + bmi + ": OBESE";
     } else if(bmi < 30 && bmi >= 25) {
